@@ -14,14 +14,30 @@
         @include adaptive-value('padding-top', 80, 30, 1);
         @include adaptive-value('padding-bottom', 60, 30, 1);
         @include adaptive-value('column-gap', 80, 0, 1);
+        @media (max-width: $md1+px) {
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr 290px;
+        }
+        @media (max-width: $md2+px) {
+            display: block;
+        }
     }
     &__main {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        @media (max-width: $md1+px) {
+            grid-column: span 2;
+            @include adaptive-value("margin-bottom", 40, 30, 1);
+        }
     }
     &__logo {
         margin: 0 0 16px / 24px * 1em 0;
+    }
+    &__menu {
+        @media (max-width: $md2+px) {
+            @include adaptive-value("margin-bottom", 40, 30, 1);
+        }
     }
     &__text {
         color: $grayColor;
@@ -64,16 +80,44 @@
         @media (min-width: $md3+px) {
             flex: 0 1 33.333%;
         }
+        @media (max-width: $md3+px) {
+            @include adaptive-value("margin-bottom", 30, 15, 1);
+        }
     }
     &__title {
         cursor: default;
-        margin: 0 0 16px / 24px * 1em 0;
+        @media (min-width: $md3+px) {
+            margin: 0 0 16px / 24px * 1em 0;
+        }
+        ._init & {
+            display: flex;
+            width: 100%;
+            flex-direction: row-reverse;
+            @extend .icon-arrow-down;
+            @media (max-width: $md3+px) {
+                justify-content: space-between;
+            }
+            &::before {
+                font-family: "icomoon";
+                font-size: 12px;
+                transition: all 0.3s ease 0s;
+            }
+        }
+        &._active {
+            &::before {
+                transform: rotate(180deg);
+                transition: all 0.3s ease 0s;
+            }
+        }
     }
     &__list {
         li {
             &:not(:last-child) {
                 margin: 0 0 15px 0;
             }
+        }
+        @media (max-width: $md3+px) {
+            margin: 15px 0 0 0;
         }
     }
     &__link {
@@ -108,18 +152,8 @@
     &__btn {
         flex: 0 0 45px;
         height: 45px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-size: 18px;
-        background-color: $orangeColor;
-        color: #fff;
         margin: 0 0 0 4px;
-        @media (any-hover: hover) {
-            &:hover {
-                background-color: darken($color: $orangeColor, $amount: 5%);
-            }
-        }
     }
     &__input {
         width: 100%;

@@ -3,12 +3,15 @@
     width: 100%;
     top: 0;
     left: 0;
+    z-index: 2;
     &__wrapper {
-        position: fixed;
-        width: 100%;
-        left: 0;
-        top: 0;
         z-index: 50;
+        @media (max-width: $md3+px) {
+            width: 100%;
+            left: 0;
+            top: 0;
+            position: fixed;
+        }
     }
     &__body {
         display: flex;
@@ -20,12 +23,14 @@
         }
         @media (max-width: $md3+px) {
             padding-right: 40px;
+            min-height: 50px;
         }
     }
     &__main {
         display: flex;
         align-items: center;
-        @media (min-width: $md2+px) {
+        flex: 0 0 494/1240 * 100%;
+        @media (max-width: $md2+px) {
             flex-grow: 1;
         }
     }
@@ -89,7 +94,6 @@
     }
     &__item {
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         margin: 0 8px;
@@ -241,16 +245,9 @@
             }
         }
     }
-    &__icon {
-        flex: 0 0 45px;
-        height: 45px;
-        font-size: 15px;
-        color: #333;
-        background-color: transparent;
-    }
     &__btn {
-        right: -40px;
-        position: relative;
+        left: 5px;
+        position: absolute;
         flex: 0 0 45px;
         height: 45px;
         font-size: 15px;

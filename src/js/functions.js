@@ -234,6 +234,8 @@ if (iconMenu != null) {
             body_lock(delay);
             iconMenu.classList.toggle("_active");
             menuBody.classList.toggle("_active");
+            console.log(iconMenu.classList);
+            console.log(menuBody.classList);
         }
     });
 };
