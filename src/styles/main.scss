@@ -16,6 +16,7 @@ $md4: 479.98;
 @import "header.scss";
 @import "footer.scss";
 @import "main-slider.scss";
+@import "advantages.scss";
 @import "popup.scss";
 body {
     // background-color: #fcf8f3;
@@ -53,6 +54,7 @@ body {
     flex: 1 1 auto;
     overflow-x: hidden;
     z-index: 1;
+    flex-direction: column;
     &__main-slider {}
 }
 
