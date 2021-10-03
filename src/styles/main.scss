@@ -17,6 +17,7 @@ $md4: 479.98;
 @import "footer.scss";
 @import "main-slider.scss";
 @import "advantages.scss";
+@import "products.scss";
 @import "popup.scss";
 body {
     // background-color: #fcf8f3;
@@ -87,6 +88,13 @@ body.ie {
 }
 
 //===================================================================================================================================
+._title {
+    @include adaptive-value("font-size", 40, 24, 1);
+    font-weight: 700;
+    line-height: 120%;
+    text-align: center;
+}
+
 //====================================================================================================
 .btn {
     display: flex;
@@ -101,6 +109,16 @@ body.ie {
     @media (any-hover: hover) {
         &:hover {
             background-color: darken($color: $orangeColor, $amount: 5%);
+        }
+    }
+    &_white {
+        color: $orangeColor;
+        background-color: #fff;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $orangeColor;
+                color: #fff;
+            }
         }
     }
 }
