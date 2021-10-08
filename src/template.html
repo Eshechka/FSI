@@ -60,10 +60,12 @@
                         </div>
                         <div class="header__actions actions-header">
                             <a href="/change-me/" class="actions-header__item actions-header__item_favorites icon-favorite"></a>
-                            <div class="actions-header__item cart-header">
-                                <a href="/change-me/" class="cart-header__icon icon-cart"><span>1</span></a>
-                                <div class="cart-header__body">
-                                    <ul class="cart-header__list cart-list"></ul>
+                            <div data-cart-header="true" class="actions-header__item cart-header">
+                                <a href="/change-me/" data-cart-products-amount="true" class="cart-header__icon icon-cart">
+                                    <!-- <span>1</span> -->
+                                </a>
+                                <div data-cart-list-body="true" class="cart-header__body">
+                                    <ul data-cart-list="true" class="cart-header__list cart-list"></ul>
                                 </div>
                             </div>
                             <a href="/change-me/" class="actions-header__item actions-header__item_user _ibg">
@@ -167,18 +169,18 @@
             <section class="page__products products">
                 <div class="products__container container">
                     <h2 class="products__title _title">Our Products</h2>
-                    <div class="products__items">
+                    <div data-products-list="true" class="products__items">
                         <article data-pid="1" class="products__item item-product">
                             <div class="item-product__labels">
                                 <div class="item-product__label item-product__label_sale">-30%</div>
                                 <div class="item-product__label item-product__label_new">new</div>
                             </div>
-                            <a href="/change-me/" class="item-product__image _ibg">
+                            <a href="/change-me/" data-product-img="true" class="item-product__image _ibg">
                                 <img src="prod01.jpg" alt="product1" class="item-product__picture">
                             </a>
                             <div class="item-product__body">
                                 <div class="item-product__content">
-                                    <h5 class="item-product__title">Syltherine</h5>
+                                    <h5 data-product-title="true" class="item-product__title">Syltherine</h5>
                                     <div class="item-product__text">Stylish cafe chair</div>
                                 </div>
                                 <div class="item-product__prices">
@@ -187,7 +189,7 @@
                                 </div>
                                 <div class="item-product__actions actions-product">
                                     <div class="actions-product__body">
-                                        <a href="/change-me/" class="actions-product__button btn btn_white">Add to cart</a>
+                                        <a href="#" data-cart-btn="true" class="actions-product__button btn btn_white">Add to cart</a>
                                         <a href="/change-me/" class="actions-product__link icon-share"></a>
                                         <a href="/change-me/" class="actions-product__link icon-favorite"></a>
                                     </div>
@@ -198,12 +200,12 @@
                             <div class="item-product__labels">
                                 <div class="item-product__label item-product__label_sale">-50%</div>
                             </div>
-                            <a href="/change-me/" class="item-product__image _ibg">
+                            <a href="/change-me/" data-product-img="true" class="item-product__image _ibg">
                                 <img src="prod02.jpg" alt="product2" class="item-product__picture">
                             </a>
                             <div class="item-product__body">
                                 <div class="item-product__content">
-                                    <h5 class="item-product__title">Leviosa</h5>
+                                    <h5 data-product-title="true" class="item-product__title">Leviosa</h5>
                                     <div class="item-product__text">Stylish cafe chair</div>
                                 </div>
                                 <div class="item-product__prices">
@@ -212,32 +214,7 @@
                                 </div>
                                 <div class="item-product__actions actions-product">
                                     <div class="actions-product__body">
-                                        <a href="/change-me/" class="actions-product__button btn btn_white">Add to cart</a>
-                                        <a href="/change-me/" class="actions-product__link icon-share"></a>
-                                        <a href="/change-me/" class="actions-product__link icon-favorite"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article data-pid="4" class="products__item item-product">
-                            <div class="item-product__labels">
-                                <div class="item-product__label item-product__label_new">new</div>
-                            </div>
-                            <a href="/change-me/" class="item-product__image _ibg">
-                                <img src="prod04.jpg" alt="product4" class="item-product__picture">
-                            </a>
-                            <div class="item-product__body">
-                                <div class="item-product__content">
-                                    <h5 class="item-product__title">Lolito</h5>
-                                    <div class="item-product__text">Luxury big sofa</div>
-                                </div>
-                                <div class="item-product__prices">
-                                    <div class="item-product__price">Rp 7.000.000</div>
-                                    <div class="item-product__price item-product__price_old">Rp 14.000.000</div>
-                                </div>
-                                <div class="item-product__actions actions-product">
-                                    <div class="actions-product__body">
-                                        <a href="/change-me/" class="actions-product__button btn btn_white">Add to cart</a>
+                                        <a href="#" data-cart-btn="true" class="actions-product__button btn btn_white">Add to cart</a>
                                         <a href="/change-me/" class="actions-product__link icon-share"></a>
                                         <a href="/change-me/" class="actions-product__link icon-favorite"></a>
                                     </div>
@@ -248,12 +225,12 @@
                             <div class="item-product__labels">
                                 <div class="item-product__label item-product__label_new">new</div>
                             </div>
-                            <a href="/change-me/" class="item-product__image _ibg">
+                            <a href="/change-me/" data-product-img="true" class="item-product__image _ibg">
                                 <img src="prod03.jpg" alt="product3" class="item-product__picture">
                             </a>
                             <div class="item-product__body">
                                 <div class="item-product__content">
-                                    <h5 class="item-product__title">Lolito</h5>
+                                    <h5 data-product-title="true" class="item-product__title">Lolito</h5>
                                     <div class="item-product__text">Luxury big sofa</div>
                                 </div>
                                 <div class="item-product__prices">
@@ -262,16 +239,41 @@
                                 </div>
                                 <div class="item-product__actions actions-product">
                                     <div class="actions-product__body">
-                                        <a href="/change-me/" class="actions-product__button btn btn_white">Add to cart</a>
+                                        <a href="#" data-cart-btn="true" class="actions-product__button btn btn_white">Add to cart</a>
                                         <a href="/change-me/" class="actions-product__link icon-share"></a>
                                         <a href="/change-me/" class="actions-product__link icon-favorite"></a>
                                     </div>
                                 </div>
                             </div>
                         </article>
-                        <div class="products__footer">
-                            <a href="/change-me/" class="products__more btn btn_white">Show more</a>
-                        </div>
+                        <article data-pid="4" class="products__item item-product">
+                            <div class="item-product__labels">
+                                <div class="item-product__label item-product__label_new">new</div>
+                            </div>
+                            <a href="/change-me/" data-product-img="true" class="item-product__image _ibg">
+                                <img src="prod04.jpg" alt="product4" class="item-product__picture">
+                            </a>
+                            <div class="item-product__body">
+                                <div class="item-product__content">
+                                    <h5 data-product-title="true" class="item-product__title">Lolito</h5>
+                                    <div class="item-product__text">Luxury big sofa</div>
+                                </div>
+                                <div class="item-product__prices">
+                                    <div class="item-product__price">Rp 7.000.000</div>
+                                    <div class="item-product__price item-product__price_old">Rp 14.000.000</div>
+                                </div>
+                                <div class="item-product__actions actions-product">
+                                    <div class="actions-product__body">
+                                        <a href="#" data-cart-btn="true" class="actions-product__button btn btn_white">Add to cart</a>
+                                        <a href="/change-me/" class="actions-product__link icon-share"></a>
+                                        <a href="/change-me/" class="actions-product__link icon-favorite"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="products__footer">
+                        <a href="/change-me/" data-more="true" class="products__more btn btn_white">Show more</a>
                     </div>
                 </div>
             </section>

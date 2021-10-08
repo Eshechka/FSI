@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isDev = process.env.NODE_env === 'development';
 const isProd = !isDev;
@@ -33,7 +34,14 @@ module.exports = {
             filename: 'index.html', // название выходного файла
         }),
         new CleanWebpackPlugin(),
-
+        new CopyPlugin({
+            patterns: [
+                { from: "src/json/", to: "json/" },
+            ],
+            options: {
+                concurrency: 10,
+            },
+        }),
     ],
 
     module: {

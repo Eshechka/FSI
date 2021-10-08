@@ -23,3 +23,4 @@ import './js/forms.js';
 import './js/sliders.js';
 import './js/dynamic_adapt.js';
 import './js/script.js';
+import './json/products.json';
