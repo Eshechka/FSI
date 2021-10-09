@@ -15,8 +15,9 @@ import './img/products/prod05.jpg';
 import './img/products/prod06.jpg';
 import './img/products/prod07.jpg';
 import './img/products/prod08.jpg';
-
-import './styles/main.scss';
+import './img/rooms/room01.jpg';
+import './img/rooms/room02.jpg';
+import './img/rooms/room03.jpg';
 
 import './js/functions.js';
 import './js/forms.js';
@@ -24,3 +25,5 @@ import './js/sliders.js';
 import './js/dynamic_adapt.js';
 import './js/script.js';
 import './json/products.json';
+
+import './styles/main.scss';

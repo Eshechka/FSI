@@ -1,0 +1,191 @@
+.page__rooms {}
+
+.rooms {
+    background-color: #fcf8f3;
+    @include adaptive-value("padding-top", 44, 30, 1);
+    @include adaptive-value("padding-bottom", 44, 30, 1);
+    &__container {
+        @media (min-width: $md2+px) {
+            display: flex;
+        }
+    }
+    &__body {
+        flex: 0 0 465 / 1240 * 100%;
+        position: relative;
+        z-index: 5;
+        align-self: center;
+        @media (min-width: $md2+px) {
+            @include adaptive-value("padding-right", 80, 30, 1);
+        }
+        @media (max-width: $md2+px) {
+            margin: 20px 0;
+            text-align: center;
+        }
+    }
+    &__title._title {
+        margin: 0 0 8px / 40px * 1em 0;
+        text-align: left;
+        @media (max-width: $md2+px) {
+            text-align: center;
+        }
+    }
+    &__text {
+        line-height: 150%;
+        font-weight: 500;
+        &:not(:last-child) {
+            margin: 0 0 24px 0;
+        }
+    }
+    &__button {
+        background-color: $orangeColor;
+        color: #fff;
+        min-width: 180px;
+        @media (any-hover: hover) {
+            &:hover {
+                color: rgba(255, 255, 255, 0.8);
+                background-color: #8d6146;
+            }
+        }
+    }
+    &__slider {
+        flex: 1 1 auto;
+        min-width: 0;
+        align-self: flex-start;
+    }
+}
+
+.slider-rooms {
+    position: relative;
+    &__body {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100vw;
+            background-color: #fcf8f3;
+            z-index: 2;
+            transform: translate(-100%, 0);
+        }
+        @media (max-width: $md3+px) {
+            padding: 20px;
+        }
+        @media (max-width: $md2+px) {
+            overflow: hidden;
+        }
+    }
+    &__slide {
+        width: 372px;
+        position: relative;
+        overflow: hidden;
+        height: unset;
+        @include adaptive-value("min-height", 585, 400, 1);
+        &.swiper-slide-active {
+            .slider-rooms__img {
+                @media (min-width: $md3+px) {
+                    height: 100%;
+                }
+            }
+        }
+        @media (max-width: $md2+px) {
+            width: 100%;
+        }
+    }
+    &__img {
+        transition: height 0.8s ease 0s;
+        height: 100%;
+        @media (min-width: $md3+px) {
+            height: 83%;
+        }
+    }
+    &__content {
+        position: absolute;
+        color: inherit;
+        min-width: 240px;
+        @include adaptive-value("left", 24, 15, 1);
+        @include adaptive-value("bottom", 24, 15, 1);
+        @include adaptive-value("padding", 32, 15, 1);
+        background-color: rgba(255, 255, 255, 0.7);
+        @supports ((-webkit-backdrop-filter: blur(31px)) or (backdrop-filter: blur(31px))) {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(31px);
+        }
+        &::before {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translate(100%, 0);
+            width: 48px;
+            height: 48px;
+            background-color: $orangeColor;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__label {}
+    &__title {
+        font-weight: 600;
+        @include adaptive-value("font-size", 32, 15, 1);
+    }
+    &__arrows {
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        left: 0px;
+        width: 100%;
+        z-index: 5;
+        justify-content: space-between;
+        & .slider-arrow {
+            pointer-events: auto;
+        }
+        @media (min-width: $md1+px) {
+            width: calc(100% + 30px);
+            left: -15px;
+        }
+        @media (min-width: $md2+px) {
+            width: 408px;
+            left: -18px;
+        }
+    }
+    &__dotts {
+        position: absolute;
+        bottom: 30px;
+        display: flex;
+        flex: 0 0 50%;
+        flex-wrap: wrap;
+        right: 0;
+        z-index: 6;
+        min-width: 50%;
+        @media (min-width: $md2+px) {
+            width: 100%;
+            left: 396px;
+        }
+        @media (max-width: $md2+px) {
+            padding: 20px;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.label-slider {
+    display: grid;
+    grid-template-columns: auto 27px auto;
+    gap: 8px;
+    align-items: center;
+    justify-content: start;
+    color: $darkGrayColor;
+    &:not(:last-child) {
+        margin: 0 0 8px 0;
+    }
+    &__number {}
+    &__text {}
+    &__line {
+        height: 1px;
+        background-color: $darkGrayColor;
+    }
+}

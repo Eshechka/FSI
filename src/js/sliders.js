@@ -1,12 +1,13 @@
   // core version + navigation, pagination modules:
-  import Swiper, { Navigation, Pagination } from 'swiper';
+  import Swiper, { Navigation, Pagination, Parallax } from 'swiper';
   // import Swiper and modules styles
   import 'swiper/css';
   import 'swiper/css/navigation';
+  import 'swiper/css/parallax';
   //   import 'swiper/css/pagination';
 
   // configure Swiper to use modules
-  Swiper.use([Navigation, Pagination]);
+  Swiper.use([Navigation, Pagination, Parallax]);
 
   //BildSlider
   let sliders = document.querySelectorAll('._swiper');
@@ -55,6 +56,31 @@
           navigation: {
               nextEl: '.slider-main .slider-arrow_next',
               prevEl: '.slider-main .slider-arrow_prev',
+          },
+      });
+  }
+
+  if (document.querySelector('.slider-rooms__body')) {
+      const swiper = new Swiper('.slider-rooms__body', {
+          observer: true,
+          observeParents: true,
+          slidesPerView: "auto",
+          spaceBetween: 24,
+          watchOverflow: true,
+          speed: 800,
+          loop: true,
+          loopAdditionalSlides: 5,
+          preloadImages: false,
+          parallax: true,
+          // Dotts
+          pagination: {
+              el: '.slider-rooms__dotts',
+              clickable: true,
+          },
+          // Arrows
+          navigation: {
+              prevEl: '.slider-rooms .slider-arrow_prev',
+              nextEl: '.slider-rooms .slider-arrow_next',
           },
       });
   }
