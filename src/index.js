@@ -18,6 +18,9 @@ import './img/products/prod08.jpg';
 import './img/rooms/room01.jpg';
 import './img/rooms/room02.jpg';
 import './img/rooms/room03.jpg';
+import './img/tips/tips01.jpg';
+import './img/tips/tips02.jpg';
+import './img/tips/tips03.jpg';
 
 import './js/functions.js';
 import './js/forms.js';
