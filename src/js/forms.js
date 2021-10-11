@@ -82,7 +82,6 @@ function form_validate_input(input) {
     } else {
         if (input.value == '' || input.value == input_g_value) {
             form_add_error(input);
-            console.log('Should be here');
             error++;
         } else {
             form_remove_error(input);

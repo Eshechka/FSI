@@ -31,8 +31,6 @@ import './img/furniture/furniture07.jpg';
 import './img/furniture/furniture08.jpg';
 import './img/furniture/furniture09.jpg';
 
-import './styles/main.scss';
-
 import './js/functions.js';
 import './js/forms.js';
 import './js/sliders.js';
@@ -40,3 +38,5 @@ import './js/dynamic_adapt.js';
 import './js/gallery.js';
 import './js/script.js';
 import './json/products.json';
+
+import './styles/main.scss';

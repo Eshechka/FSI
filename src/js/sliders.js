@@ -84,6 +84,7 @@
           },
       });
   }
+
   if (document.querySelector('.slider-tips__body')) {
       const swiper = new Swiper('.slider-tips__body', {
           observer: true,

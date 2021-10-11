@@ -49,7 +49,6 @@ if (furniture && !isMobile.any()) {
 
         const delta = furnitureItemsWidth - furniture.offsetWidth; // 2491px - 1000px = 1491px
         const distX = Math.floor(coordXpercent - positionX); // -80% - 0 = -80
-        console.log('distX ', distX);
 
         positionX += distX * speed; // 0 + -80% * 0.02 = 1,6
 
