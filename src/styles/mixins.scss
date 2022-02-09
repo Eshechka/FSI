@@ -1,22 +1,91 @@
 //Адаптивное свойство
 @mixin adaptive-value($indentType, $pcSize, $mobSize, $maxSize) {
-    $addSize: $pcSize - $mobSize;
-    @if $maxSize==1 {
-        //Только если меньше контейнера
-        #{$indentType}: $pcSize + px;
-        @media (max-width: #{$maxWidthContainer + px}) {
-            #{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
-        }
+  $addSize: $pcSize - $mobSize;
+  @if $maxSize==1 {
+    //Только если меньше контейнера
+    #{$indentType}: $pcSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$indentType}: calc(
+        #{$mobSize + px} + #{$addSize} *
+          ((100vw - 320px) / #{$maxWidthContainer - 320})
+      );
     }
-    @else if $maxSize==2 {
-        //Только если больше контейнера
-        #{$indentType}: $pcSize + px;
-        @media (min-width: #{$maxWidthContainer + px}) {
-            #{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
-        }
+  } @else if $maxSize==2 {
+    //Только если больше контейнера
+    #{$indentType}: $pcSize + px;
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$indentType}: calc(
+        #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+      );
     }
-    @else {
-        //Всегда
-        #{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
-    }
+  } @else {
+    //Всегда
+    #{$indentType}: calc(
+      #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320})
+    );
+  }
+}
+
+@mixin sign {
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 3px 5px;
+  background-color: $blue;
+  text-align: center;
+  border-radius: 2px;
+}
+@mixin sign_transparent {
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  text-transform: uppercase;
+  color: $blue;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 3px 5px;
+  background-color: transparent;
+  text-align: center;
+  border-radius: 2px;
+}
+
+@mixin arrow($size: 9px, $color: #000, $right: 0, $width: 1px) {
+  &::after {
+    content: "";
+    position: absolute;
+    right: $right;
+    top: 50%;
+    width: $size;
+    height: $size;
+    border-top: $width solid $color;
+    border-right: $width solid $color;
+    transform: translateY(-50%) translateX($right) rotate(45deg);
+  }
+}
+
+@mixin slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin slider-ctrl($sizeCtrl: 8px, $sizeBetween: 29px, $colorActive: $blue) {
+  width: $sizeCtrl;
+  height: $sizeCtrl;
+  border-radius: 50%;
+  border: 1px solid $colorActive;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-right: $sizeBetween;
+  }
+
+  &.active {
+    background-color: $colorActive;
+  }
 }

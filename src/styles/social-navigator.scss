@@ -1,0 +1,122 @@
+.social-navigator {
+  font-family: "GostUI_Medium";
+  background-color: $blue;
+  color: white;
+
+  &__container {
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    background-image: url("../img/app-human.svg");
+    background-repeat: no-repeat;
+    background-size: 15%;
+    background-position: 42% center;
+  }
+  &__leftside {
+    width: 32%;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 107%;
+    margin-bottom: 25px;
+  }
+  &__accent-text {
+    color: $yellow;
+  }
+  &__text {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+    padding-bottom: 37px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 52px;
+      height: 3px;
+      background-color: white;
+    }
+  }
+  &__btns {
+    margin-top: 57px;
+  }
+  &__btn {
+    display: inline-flex;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: black;
+    background-position: center;
+    background-size: contain;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    &_googleplay {
+      background-image: url("../img/googleplay.svg");
+    }
+    &_appstore {
+      background-image: url("../img/appstore.svg");
+    }
+  }
+  &__rightside {
+    width: 45%;
+    align-self: center;
+  }
+  &__advantages-list {
+    position: relative;
+  }
+  &__advantages-picture {
+    width: 40%;
+    min-width: 187px;
+    background-image: url("../img/application.svg");
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right top;
+  }
+}
+.advantages-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__item {
+    background-color: rgba(white, 0.2);
+    border-radius: 0px 20px 20px 20px;
+    padding: 24px 20px 13px;
+    padding-right: 200px;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 34px;
+    }
+  }
+  &__title {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: $mainColor;
+    background-color: $yellow;
+    padding: 3px 20px;
+    border-radius: 100px;
+  }
+  &__text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+  }
+}

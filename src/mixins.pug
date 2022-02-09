@@ -1,0 +1,23 @@
+mixin filter-list({cards, theme, title, filteritems, filtercards, link})
+  .filter-list
+    .filter-list__topgroup
+      .filter-list__title= title
+      .filter-list__filter
+          ul.filter-list__filterlist
+            each item in filteritems
+              li(class=`filter-list__filteritem ${item.active ? 'active' : ''}`)= item.text
+    if cards    
+      .filter-list__cards
+        ul.filter-list__cardlist
+            each card in filtercards
+              li(class=`filter-list__carditem ${theme ? `filter-list__carditem_${theme}` : ''}`)
+                .filter-list__cardtext= card
+                if link 
+                  .filter-list__cardlink
+                    svg
+                      use(xlink:href=`./img/icons/sprite.svg#${link}`)
+
+
+
+mixin button-with-picture({text, classname})
+  button(class=`${classname}`)= text

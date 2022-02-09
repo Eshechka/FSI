@@ -1,0 +1,205 @@
+.benefits {
+  &__container {
+  }
+  &__main-slider {
+  }
+  &__info-benefits {
+  }
+  &__management-slider {
+  }
+  &__wrapper-info {
+  }
+}
+
+.main-slider {
+  width: 100%;
+
+  &__slide {
+    background-color: $lightGray;
+    padding-right: 500px;
+    padding: 30px 50px;
+    height: 379px;
+    width: 100%;
+    display: flex;
+  }
+  &__slide-info {
+    padding: 20px 0;
+  }
+  &__slide-img {
+    width: 35%;
+    height: 100%;
+
+    & img {
+      object-fit: contain;
+    }
+  }
+  &__slide-title {
+    color: $blue;
+    font-weight: 700;
+    line-height: 50px;
+    text-transform: uppercase;
+  }
+  &__slide-content {
+    font-size: 36px;
+  }
+  &__btn {
+  }
+  &__controls {
+    display: flex;
+  }
+  &__ctrl {
+    background-color: transparent;
+    flex-grow: 1;
+    border-top: 3px solid $gray;
+    color: $mainColor;
+    width: 250px;
+    padding: 22px 0;
+    text-align: left;
+
+    &:hover {
+      color: $blueHover;
+      border-top: 3px solid $blueHover;
+    }
+    &.active {
+      color: $blue;
+      border-top: 3px solid $blue;
+    }
+  }
+}
+
+.info-benefits {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  grid-gap: 38px 40px;
+  grid-template-areas:
+    "title  ."
+    "list   manager";
+  margin-top: 22px;
+  padding: 40px 0;
+
+  &__topgroup {
+    grid-area: title;
+    display: flex;
+  }
+  &__title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  &__more {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 20px;
+    color: $mainColor;
+
+    @include arrow;
+  }
+  &__benefits-list {
+    grid-area: list;
+  }
+  &__management {
+    grid-area: manager;
+  }
+}
+
+$benefit-pictures: spec, type, amount, tcp, treatment, direct;
+
+.benefits-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 35px;
+  column-gap: 40px;
+
+  &__item {
+    position: relative;
+    padding: 20px 25px 20px 30px;
+    width: calc((100% - 40px) / 2);
+    min-height: 160px;
+    background-color: $lightBlue;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__picture {
+    width: 120px;
+    height: 120px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @each $picture in $benefit-pictures {
+      &_#{$picture} {
+        background-image: url("../img/#{$picture}.svg");
+      }
+    }
+  }
+  &__title {
+    font-weight: bold;
+  }
+  &__btn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    bottom: 20px;
+    left: 30px;
+    cursor: pointer;
+
+    @include arrow($size: 9px, $color: $blue, $right: 50%);
+  }
+}
+
+.management-slider {
+  background-color: $lightBlue;
+  height: 550px;
+  position: relative;
+
+  &__slide {
+    position: relative;
+  }
+  &__sign {
+    @include sign;
+  }
+  &__img {
+    height: 355px;
+    margin-bottom: 18px;
+    object-fit: contain;
+    min-height: 355px;
+    min-width: 100%;
+  }
+  &__name {
+    font-size: 24px;
+    padding: 7px 14px;
+  }
+  &__position {
+    padding: 7px 14px;
+    font-size: 16px;
+    line-height: 140%;
+    color: #848e99;
+  }
+  &__more-info {
+    min-height: 40px;
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 0;
+    color: $blue;
+    margin: 7px 14px;
+
+    @include arrow($color: $blue);
+  }
+  &__controls {
+    position: absolute;
+    bottom: 35px;
+    right: 29px;
+
+    @include slider-controls();
+  }
+  &__ctrl {
+    @include slider-ctrl();
+  }
+}

@@ -1,68 +1,87 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
-const isDev = process.env.NODE_env === 'development';
+const isDev = process.env.NODE_env === "development";
 const isProd = !isDev;
 
 module.exports = {
-    entry: {
-        main: path.resolve(__dirname, './src/index.js'),
-    },
+  entry: {
+    main: path.resolve(__dirname, "./src/index.js"),
+  },
 
-    output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: '[name].bundle.js',
-    },
+  output: {
+    path: path.resolve(__dirname, "./dist"),
+    filename: "[name].bundle.js",
+  },
 
-    mode: 'development',
+  mode: "development",
 
-    devServer: {
-        historyApiFallback: true,
-        // contentBase: path.resolve(__dirname, './dist'),
-        open: true,
-        compress: true,
-        hot: true,
-        port: 3400,
-    },
+  devServer: {
+    historyApiFallback: true,
+    // contentBase: path.resolve(__dirname, './dist'),
+    open: true,
+    compress: true,
+    hot: true,
+    port: 3400,
+  },
 
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './src/template.html'), // шаблон
-            filename: 'index.html', // название выходного файла
-        }),
-        new CleanWebpackPlugin(),
-        new CopyPlugin({
-            patterns: [
-                { from: "src/json/", to: "json/" },
-            ],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "./src/template.pug"), // шаблон
+      filename: "index.html", // название выходного файла
+    }),
+    new CleanWebpackPlugin(),
+  ],
+
+  module: {
+    rules: [
+      // изображения
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
+        type: "asset/resource",
+      },
+      // шрифты и SVG
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: "asset/inline",
+      },
+      {
+        test: /\.(s[ac]ss|css)$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+          },
+          {
+            loader: "resolve-url-loader",
             options: {
-                concurrency: 10,
+              sourceMap: true,
             },
-        }),
-    ],
-
-    module: {
-        rules: [
-            // изображения
-            {
-                test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]',
-                },
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
             },
-            // шрифты и SVG
-            {
-                test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-                type: 'asset/inline',
-            },
-            {
-                test: /\.(scss|css)$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
-            },
+          },
         ],
-    },
-}
+      },
+      {
+        test: /\.pug$/,
+        use: [
+          {
+            loader: "html-loader",
+          },
+          {
+            loader: "pug-html-loader",
+            options: {
+              pretty: true,
+            },
+          },
+        ],
+      },
+    ],
+  },
+};

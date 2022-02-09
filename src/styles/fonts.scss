@@ -1,90 +1,94 @@
 @font-face {
-    font-family: 'Gilroy-Regular';
-    src: url('../fonts/Gilroy-Regular.eot');
-    src: url('../fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Gilroy-Regular.woff2') format('woff2'), url('../fonts/Gilroy-Regular.woff') format('woff'), url('../fonts/Gilroy-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "GostUI_Bold";
+  src: 
+  // url("../fonts/GostUI_Bold.eot");
+  // src: url("../fonts/GostUI_Bold.eot?#iefix") format("embedded-opentype"),
+  //   url("../fonts/GostUI_Bold.woff2") format("woff2"),
+  //   url("../fonts/GostUI_Bold.woff") format("woff"),
+    url("../fonts/GostUI_Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Gilroy-Medium';
-    src: url('../fonts/Gilroy-Medium.eot');
-    src: url('../fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/Gilroy-Medium.woff2') format('woff2'), url('../fonts/Gilroy-Medium.woff') format('woff'), url('../fonts/Gilroy-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
+  font-family: "GostUI_Medium";
+  src: url("../fonts/GostUI_Medium.ttf") format("truetype");
+  // url("../fonts/GostUI_Medium.eot");
+  // src: url("../fonts/GostUI_Medium.eot?#iefix") format("embedded-opentype"),
+  //   url("../fonts/GostUI_Medium.woff2") format("woff2"),
+  //   url("../fonts/GostUI_Medium.woff") format("woff"),
+
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Gilroy-Bold';
-    src: url('../fonts/Gilroy-Bold.eot');
-    src: url('../fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Gilroy-Bold.woff2') format('woff2'), url('../fonts/Gilroy-Bold.woff') format('woff'), url('../fonts/Gilroy-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+  font-family: "GostUI_Regular";
+  src: 
+  // url("../fonts/GostUI_Regular.eot");
+  // src: url("../fonts/GostUI_Regular.eot?#iefix") format("embedded-opentype"),
+  //   url("../fonts/GostUI_Regular.woff2") format("woff2"),
+  //   url("../fonts/GostUI_Regular.woff") format("woff"),
+    url("../fonts/GostUI_Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Gilroy-Semibold';
-    src: url('../fonts/Gilroy-Semibold.eot');
-    src: url('../fonts/Gilroy-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/Gilroy-Semibold.woff2') format('woff2'), url('../fonts/Gilroy-Semibold.woff') format('woff'), url('../fonts/Gilroy-Semibold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'icomoon';
-    src: url('../fonts/icomoon.ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
 [class^="icon-"],
 [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-arrow-down:before {
-    content: "\e900";
+  content: "\e900";
 }
 
 .icon-arrow-link:before {
-    content: "\e901";
+  content: "\e901";
 }
 
 .icon-cart:before {
-    content: "\e902";
+  content: "\e902";
 }
 
 .icon-favorite:before {
-    content: "\e903";
+  content: "\e903";
 }
 
 .icon-location:before {
-    content: "\e904";
+  content: "\e904";
 }
 
 .icon-phone:before {
-    content: "\e905";
+  content: "\e905";
 }
 
 .icon-search:before {
-    content: "\e906";
+  content: "\e906";
 }
 
 .icon-send:before {
-    content: "\e907";
+  content: "\e907";
 }
 
 .icon-share:before {
-    content: "\e908";
+  content: "\e908";
 }

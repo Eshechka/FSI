@@ -1,0 +1,101 @@
+.documents {
+  &__container {
+    padding: 85px 0;
+  }
+  &__filter-list {
+  }
+
+  &__alldocs {
+    min-height: 40px;
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    padding-left: 0;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 40px;
+
+    @include arrow($color: $mainColor, $width: 2px);
+  }
+}
+
+.filter-list {
+  &__topgroup {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $gray;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    padding: 20px 0;
+  }
+  &__filter {
+    margin-left: auto;
+    align-self: flex-end;
+  }
+
+  &__filterlist {
+    display: flex;
+  }
+  &__filteritem {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 0 22px;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+
+    &.active {
+      color: $blue;
+      border-bottom: 3px solid $blue;
+    }
+  }
+
+  &__cards {
+    padding: 50px 0 40px;
+  }
+  &__cardlist {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+  &__carditem {
+    width: calc((100% - 60px) / 3);
+    min-height: 260px;
+    padding: 25px 30px;
+    border-radius: 5px;
+    border: 2px solid $gray;
+    position: relative;
+
+    &_shadow {
+      background-color: $lightGray;
+      border: none;
+      min-height: 182px;
+    }
+  }
+  &__cardtext {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    padding-bottom: 31px;
+  }
+  &__cardlink {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+
+    & svg {
+      width: 24px;
+      height: 24px;
+      fill: transparent;
+      stroke: $mainColor;
+    }
+  }
+}

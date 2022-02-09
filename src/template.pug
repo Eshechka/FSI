@@ -1,0 +1,328 @@
+include mixins.pug
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='shortcut icon' href='./img/favicon.ico' type='image/x-icon')
+    title Фонд социального страхования
+  body
+    .wrapper
+      header.header
+        .header__upper
+          .header__contaniner-upper.container
+            a.header__options-item.header__options-item_globe(href="88003027549")
+              span.header__options-img
+              .header__options-text Горячая линия в региональных отделениях
+            a.header__options-item.header__options-item_phone(href="88003027549")
+              svg.header__options-img
+                use(xlink:href='./img/icons/sprite.svg#phone')
+              .header__options-text Горячая линия 8 (800) 302 75 49
+            a.header__options-item.header__options-item_stop(href='change-me')
+              svg.header__options-img
+                use(xlink:href='./img/icons/sprite.svg#alertcircle')
+              .header__options-text Стоп коррупция
+            a.header__options-item.header__options-item_search(href='change-me')
+              svg.header__options-img
+                use(xlink:href='./img/icons/sprite.svg#search')
+              .header__options-text Поиск
+            a.header__options-item.header__options-item_poorvision(href='change-me')
+              svg.header__options-img
+                use(xlink:href='./img/icons/sprite.svg#glases')
+              .header__options-text Версия для слабовидящих
+        .header__lower
+          .header__contaniner-lower.container
+            .logo
+              .logo__img
+                img(src='./img/Logo.svg' alt='Logotype')
+            .header__menu
+              nav.menu
+                ul.menu__list
+                  li.menu__item
+                    a.menu__link(href='/change-me/') О фонде
+                  li.menu__item
+                    a.menu__link(href='/change-me/') Деятельность
+                  li.menu__item
+                    a.menu__link(href='/change-me/') Пресс-центр
+                  li.menu__item
+                    a.menu__link(href='/change-me/') Документы
+                  li.menu__item
+                    a.menu__link(href='/change-me/') Сервисы
+                  li.menu__item
+                    a.menu__link(href='/change-me/') Контакты
+                  li.menu__item
+                    a.menu__link(href='/change-me/') ...
+      
+      main.page
+        section.page__benefits.benefits
+          .benefits__container.container
+            .benefits__main-slider.main-slider
+              .main-slider__slide
+                .main-slider__slide-info
+                  p.main-slider__slide-title
+                    | Господдержка работодателей в 2021 году
+                  p.main-slider__slide-content
+                    | Подать заявление в ФСС на получение субсидии при найме
+                    | безработных
+                  button.main-slider__btn Подробнее
+                .main-slider__slide-img
+                  img.main-slider__img(src='./img/benefits-slide1.png' alt='slide')
+              .main-slider__controls
+                button.main-slider__ctrl.active
+                  | Господдержка работодателей в 2021 году
+                button.main-slider__ctrl
+                  | Специальная соцвыплата работникам соцучреждений
+                button.main-slider__ctrl
+                  | Специальная соцвыплата медработникам
+                button.main-slider__ctrl
+                  | Дополнительные гарантии медицинским работникам
+            .benefits__wrapper-info.info-benefits
+              .info-benefits__topgroup
+                h2.info-benefits__title Все о пособиях
+                a.info-benefits__more(href='/change-me/') Узнать больше
+              ul.info-benefits__benefits-list.benefits-list
+                li.benefits-list__item
+                  p.benefits-list__title Размеры пособий
+                  a.benefits-list__btn(href='/change-me/')
+                  .benefits-list__picture.benefits-list__picture_amount
+                li.benefits-list__item
+                  p.benefits-list__title Виды пособий
+                  a.benefits-list__btn(href='/change-me/')
+                  .benefits-list__picture.benefits-list__picture_type
+                li.benefits-list__item
+                  p.benefits-list__title Специальные соцвыплаты
+                  a.benefits-list__btn(href='/change-me/')
+                  .benefits-list__picture.benefits-list__picture_spec
+                li.benefits-list__item
+                  p.benefits-list__title Прямые выплаты
+                  a.benefits-list__btn(href='/change-me/')
+                  .benefits-list__picture.benefits-list__picture_direct
+                li.benefits-list__item
+                  p.benefits-list__title Получение ТСР
+                  a.benefits-list__btn(href='/change-me/')
+                  .benefits-list__picture.benefits-list__picture_tcp
+                li.benefits-list__item
+                  p.benefits-list__title
+                    | Cанаторно-курортное лечение
+                  a.benefits-list__btn(href='/change-me/')
+                  .benefits-list__picture.benefits-list__picture_treatment
+              .info-benefits__management.management-slider
+                .management-slider__slide
+                  span.management-slider__sign руководство фонда
+                  img.management-slider__img(src='./img/manager.png' alt='Manager')
+                  .management-slider__name
+                    | Поликашин Алексей Петрович
+                  .management-slider__position
+                    | ВрИО председателя Фонда социального страхования Российской
+                    | Федерации
+                  +button-with-picture({
+                    text: 'Подробнее', 
+                    classname: 'management-slider__more-info'
+                    })
+                .management-slider__controls
+                  span.management-slider__ctrl.active
+                  span.management-slider__ctrl
+                  span.management-slider__ctrl
+        section.page__news.news
+          .news__container.container
+            .news__wrapper
+              .news__big-news.big-news
+                span.big-news__sign Новости
+                img.big-news__img(src='./img/big-news.png' alt='News image')
+                .big-news__text
+                  | Со 2 мая 2021 года вступает в силу новый приказ Фонда
+                  | социального страхования Российской Федерации
+                .big-news__date 28 апреля 2021
+              .news__news-slider.news-slider
+                .news-slider__slide
+                  span.news-slider__sign COVID-19
+                  img.news-slider__img(src='./img/news-slide1.svg')
+                  .news-slider__text
+                    | Единый колл-центр ФСС РФ по короновирусу
+                  button.news-slider__more Подробнее
+                .news-slider__controls
+                  span.news-slider__ctrl.active
+                  span.news-slider__ctrl
+                  span.news-slider__ctrl
+              .news__news-list
+                ul.news-list
+                  li.news-list__item
+                    a.news-list__link(href='/change-me/')
+                      | Подача заявления на прохождение медико-социальной
+                      | экспертизы доступна на портале Госуслуг
+                    .news-list__date 27 апреля 2021
+                  li.news-list__item
+                    a.news-list__link(href='/change-me/')
+                      | Мишустин утвердил систему электронных сертификатов для
+                      | людей с инвалидностью
+                    .news-list__date 26 апреля 2021
+                  li.news-list__item
+                    a.news-list__link(href='/change-me/')
+                      | Госдума приняла закон о прямых выплатах больничных из
+                      | Фонда соцстрахования
+                    .news-list__date 23 апреля 2021
+        section.page__social-navigator.social-navigator
+          .social-navigator__container.container
+            .social-navigator__leftside
+              h2.social-navigator__title
+                span.social-navigator__accent-text Социальный
+                |                 навигатор
+              .social-navigator__text
+                | Мобильное приложение Фонда Социального Страхования Российской
+                | Федерации
+              .social-navigator__btns
+                a.social-navigator__btn.social-navigator__btn_googleplay(href='/change-me/')
+                a.social-navigator__btn.social-navigator__btn_appstore(href='/change-me/')
+            .social-navigator__rightside
+              .social-navigator__advantages-list
+                ul.advantages-list
+                  li.advantages-list__item
+                    .advantages-list__title Безопасность
+                    .advantages-lis__text
+                      | Доступ к личному кабинету организован через ЕСИА. Вы
+                      | можете не переживать о сохранности своих персональных
+                      | данных.
+                  li.advantages-list__item
+                    .advantages-list__title
+                      | Актуальная информация
+                    .advantages-lis__text
+                      | Удобный поиск информации по разделам в зависимости от
+                      | жизненной ситуации.
+                  li.advantages-list__item
+                    .advantages-list__title Экономия времени
+                    .advantages-lis__text
+                      | Информация в приложении постоянно обновляется.
+                .social-navigator__advantages-picture
+        section.page__documents.documents
+          .documents__container.container
+
+            .documents__filter-list
+              +filter-list({
+                cards: true,
+                title: 'Документы', 
+                filteritems: [
+                  {text: 'Последние', active: true},
+                  {text: 'Постановления'},
+                  {text: 'Приказы'},
+                  {text: 'Протоколы'},
+                  ],
+                filtercards: [
+                  'Постановление Правительства РФ от 28.01.2021 № 73 «Об утверждении коэффициента индексации выплат, пособий и компенсаций в 2021 году»',
+                  'Федеральный закон от 22.12.2020 № 434-ФЗ «О страховых тарифах на обязательное социальное страхование от несчастных случаев на производстве и профессиональных заболеваний на 2021 год и на плановый период 2022 и 2023 годов»',
+                  'Постановление ФСС РФ от 25.06.2020 № 107 «Об утверждении значений основных показателей по видам экономической деятельности на 2021 год»',
+                  'Федеральный закон от 27.12.2019 № 445-ФЗ «О страховых тарифах на обязательное социальное страхование от несчастных случаев на производстве и профессиональных заболеваний на 2020 год и на плановый период 2021 и 2022 годов»',
+                  'Приказ Фонда социального страхования Российской Федерации от 2 августа 2019 г. Об организации работы по реализации постановления Правительства Российской Федерации от 9 июля 2019 г. N 872 «О мерах по реализации статей 135 и 189.94 Федерального закона “О несостоятельности (банкротстве)”»',
+                  'Постановление Правительства Российской Федерации от 9 июля 2019 г. N 872 «О мерах по реализации статей 135 и 189.94 Федерального закона «О несостоятельности (банкротстве)»',
+                ]
+                })
+
+              .documents__lower
+                +button-with-picture({
+                  text: 'Подробнее', 
+                  classname: 'documents__alldocs'
+                })
+
+        section.gosuslugi
+          .gosuslugi__container.container
+
+        section.regions
+          .regions__container.container
+            .regions__filter-list
+              +filter-list({
+                title: 'Региональные отделения', 
+                filteritems: [
+                  {text: 'Карта', active: true},
+                  {text: 'Список регионов'},
+                  ],
+                })
+            .regions__regmap
+              .regmap
+                svg
+                  use(xlink:href='./img/map.svg#map')
+
+        section.useful-links
+          .useful-links__container.container
+            .useful-links__filter-list
+              +filter-list({
+                link: 'extlink',
+                cards: true,
+                theme: "shadow",
+                title: 'Полезные ссылки', 
+                filteritems: [
+                  {text: 'Главное', active: true},
+                  {text: 'Специализированные порталы'},
+                  {text: 'Ключевые мероприятия'},
+                  ],
+                filtercards: [
+                  'Сайт Президента Российской Федерации',
+                  'Сайт Правительства Российской Федерации',
+                  'Минтруд',
+                ]
+                })
+
+      footer.footer
+        .footer__container.container
+          .footer__contacts
+            .logo
+              .logo__img
+                img(src='./img/Logo.svg' alt='Logotype')
+            .footer__address
+              | 107078, Москва, Орликов переулок, д. 3а
+            .footer__phone
+              a.footer__phone-link(href='tel:+74956680333')
+                | + 7 (495) 668-03-33
+          .footer__main-blocks.simple-list
+            .simple-list__title Основные разделы
+            .simple-list__list
+              li.simple-list__item
+                a.simple-list__link(href='/change-me/')
+                  | Нормативные акты
+              li.simple-list__item
+                a.simple-list__link(href='/change-me/')
+                  | Виды пособий и консультаций
+              li.simple-list__item
+                a.simple-list__link(href='/change-me/')
+                  | Калькулятор пособий
+              li.simple-list__item
+                a.simple-list__link(href='/change-me/')
+                  | Администрирование страховых взносов
+          .footer__extra-links.simple-list
+            .simple-list__title Дополнительные ссылки
+            .simple-list__list
+              li.simple-list__item
+                a.simple-list__link(href='/change-me/')  Контакты
+              li.simple-list__item
+                a.simple-list__link(href='/change-me/')  Статистика
+              li.simple-list__item
+                a.simple-list__link(href='/change-me/')  Ссылки
+              li.simple-list__item
+                a.simple-list__link(href='/change-me/')
+                  | Вопросы, ответы, объявления
+          .footer__socials
+            ul.socials
+              li.socials__item.socials__item_fb
+                a.socials__link(href='/change-me/')
+                  | fb
+                  svg.socials__img
+                    use(xlink:href='./img/icons/sprite.svg#fb')
+              li.socials__item.socials__item_vk
+                a.socials__link(href='/change-me/')
+                  | vk
+                  svg.socials__img
+                    use(xlink:href='./img/icons/sprite.svg#vk')
+              li.socials__item.socials__item_ok
+                a.socials__link(href='/change-me/')
+                  | ok
+                  svg.socials__img
+                    use(xlink:href='./img/icons/sprite.svg#ok')
+              li.socials__item.socials__item_tg
+                a.socials__link(href='/change-me/')
+                  | tg
+                  svg.socials__img
+                    use(xlink:href='./img/icons/sprite.svg#tg')
+          .footer__copyright
+            | © 2021 Фонд социального страхования Российской Федерации
+          .footer__conf-policy
+            a.footer__conf-policy-link(href='/change-me/') Политика конфиденциальности
